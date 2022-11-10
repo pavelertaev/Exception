@@ -16,7 +16,7 @@ public class Main {
         product.addList(fish);
         product.addList(meat);
         System.out.println(product.getList());
-        product.isBought(meat);
+        //product.isBought(meat);
 
 
     }
