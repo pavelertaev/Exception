@@ -22,7 +22,7 @@ public class Main {
         breakFast.addProducts(banan);
         breakFast.addProducts(apple);
         recipe.addReception(breakFast);
-
+        System.out.println(product.getList());
         System.out.println(breakFast.getTotalCost());
 
 
