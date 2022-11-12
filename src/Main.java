@@ -11,10 +11,10 @@ public class Main {
 
         ProductList product = new ProductList();
         ProductList recipe = new ProductList();
-        product.addList(banan);
-        product.addList(apple);
-        product.addList(fish);
-        product.addList(meat);
+        product.addProduct(banan);
+        product.addProduct(apple);
+        product.addProduct(fish);
+        product.addProduct(meat);
 
 
         Reception breakFast= new Reception(new HashSet<>(),"Завтрак");
@@ -22,7 +22,7 @@ public class Main {
         breakFast.addProducts(banan);
         breakFast.addProducts(apple);
         recipe.addReception(breakFast);
-        System.out.println(product.getList());
+        System.out.println(product.getProducts());
         System.out.println(breakFast.getTotalCost());
 
 
