@@ -1,24 +1,24 @@
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Objects;
-import java.util.Set;
 
 public class Reception {
-    private Set<Product> products = new HashSet<>();
+    private HashMap<Product,Integer> products = new HashMap<>();
     private int totalCost;
     private String recipe;
 
 
-    public Reception(Set<Product> products, String recipe) {
+    public Reception(HashMap<Product, Integer> products, String recipe) {
         this.products = products;
         this.recipe = recipe;
-        calculateCost();
-    }
-    public void addProducts(Product product){
-        products.add(product);
+        this.totalCost = getTotalCost();
     }
 
-    public Set<Product> getProducts() {
-        return products;
+    public void addProducts(Product product){
+        products.put(product,product.getAmount());
+    }
+
+    public void setProducts(HashMap<Product, Integer> products) {
+        this.products = products;
     }
 
     public int getTotalCost() {
@@ -45,8 +45,9 @@ public class Reception {
 
     public void calculateCost() {
         int total = 0;
-        for (Product list : products) {
-            total += list.getPrice();
+        for (Product product : products.keySet() ) {
+            int i = product.getWeight() * product.getPrice();
+            total += i;
         }
         totalCost = total;
     }
