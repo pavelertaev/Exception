@@ -13,8 +13,15 @@ public class Reception {
         this.totalCost = getTotalCost();
     }
 
+    public void addProducts(Product product,int amount){
+        if(amount <1){
+            amount=Math.abs(amount);
+        }
+        products.put(product,amount);
+
+    }
     public void addProducts(Product product){
-        products.put(product,product.getAmount());
+        products.put(product,1);
     }
 
     public void setProducts(HashMap<Product, Integer> products) {
@@ -46,7 +53,7 @@ public class Reception {
     public void calculateCost() {
         int total = 0;
         for (Product product : products.keySet() ) {
-            int i = product.getWeight() * product.getPrice();
+            int i =( product.getWeight() * product.getPrice())* products.get(product);
             total += i;
         }
         totalCost = total;

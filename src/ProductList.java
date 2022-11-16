@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class ProductList {
@@ -25,6 +26,18 @@ public class ProductList {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductList that = (ProductList) o;
+        return Objects.equals(products, that.products) && Objects.equals(receptionSet, that.receptionSet);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(products, receptionSet);
+    }
 
     public void addProduct(Product product) {
         if(product.equals(null)&&product.getAmount()==0){

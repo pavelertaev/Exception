@@ -13,16 +13,16 @@ public class Main {
 
         HashMap<Product,Integer> products = new HashMap<>();
         ProductList recipe = new ProductList();
-        products.put(banan,3);
+        products.put(banan,2);
         products.put(apple,2);
         products.put(fish,2);
         products.put(meat,3);
 
 
-        Reception breakFast= new Reception(new HashMap<Product,Integer>(),"Завтрак");
+        Reception breakFast = new Reception(recipe.getProducts(),"Завтрак");
 
-        breakFast.addProducts(banan);
-        breakFast.addProducts(apple);
+        breakFast.addProducts(banan,2);
+        breakFast.addProducts(apple,2);
         recipe.addReception(breakFast);
         System.out.println(products.keySet());
         System.out.println(breakFast.getTotalCost());

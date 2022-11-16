@@ -31,6 +31,7 @@ public class Product {
         this.weight = weight;
 
 
+
     }
 
     public String getProduct() {
