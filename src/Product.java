@@ -4,6 +4,15 @@ public class Product {
     private String product;
     private int price;
     private int weight;
+    private int amount;
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
 
     public void setBought(boolean bought) {
         this.bought = bought;
@@ -20,6 +29,8 @@ public class Product {
         this.product = product;
         this.price = price;
         this.weight = weight;
+
+
 
     }
 
